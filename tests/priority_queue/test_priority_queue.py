@@ -27,3 +27,8 @@ def test_basic_priority_queueing():
     # arquivo_prioritario é inserido em high_priority
     fila_prioridade.enqueue(arquivo_prioritario)
     assert len(fila_prioridade.high_priority) == 1
+
+    # primeiro arquivo removido é o arquivo_prioritario
+    fila_prioridade.dequeue()
+    assert len(fila_prioridade.high_priority) == 0
+    assert len(fila_prioridade.regular_priority) == 1
