@@ -1,3 +1,4 @@
+import pytest
 from ting_file_management.priority_queue import PriorityQueue
 
 
@@ -37,3 +38,10 @@ def test_basic_priority_queueing():
     fila_prioridade.dequeue()
     assert len(fila_prioridade.high_priority) == 0
     assert len(fila_prioridade.regular_priority) == 0
+
+    # ocorre IndexError ao tentar acessar um indice invalido
+    fila_prioridade.enqueue(arquivo_regular)
+    fila_prioridade.enqueue(arquivo_prioritario)
+
+    with pytest.raises(IndexError):
+        fila_prioridade.search(2)
