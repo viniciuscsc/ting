@@ -32,3 +32,8 @@ def test_basic_priority_queueing():
     fila_prioridade.dequeue()
     assert len(fila_prioridade.high_priority) == 0
     assert len(fila_prioridade.regular_priority) == 1
+
+    # se nao ha arquivo_prioritario, remove o arquivo_regular
+    fila_prioridade.dequeue()
+    assert len(fila_prioridade.high_priority) == 0
+    assert len(fila_prioridade.regular_priority) == 0
