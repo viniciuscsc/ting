@@ -1,7 +1,7 @@
 import sys
 
 
-def txt_importer(path_file: str):
+def txt_importer(path_file):
     try:
         with open(path_file, "r") as arquivo_noticias:
             if not path_file.endswith(".txt"):

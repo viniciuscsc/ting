@@ -5,10 +5,10 @@ class Queue(AbstractQueue):
     def __init__(self):
         self.queue = list()
 
-    def __len__(self) -> int:
+    def __len__(self):
         return len(self.queue)
 
-    def enqueue(self, value) -> None:
+    def enqueue(self, value):
         self.queue.append(value)
 
     def dequeue(self):
@@ -16,7 +16,7 @@ class Queue(AbstractQueue):
             return self.queue.pop(0)
         raise IndexError("Fila vazia")
 
-    def search(self, index: int):
+    def search(self, index):
         if 0 <= index <= len(self.queue) - 1:
             return self.queue[index]
         raise IndexError("Índice Inválido ou Inexistente")
